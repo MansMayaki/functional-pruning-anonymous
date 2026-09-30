@@ -1,6 +1,6 @@
 # Functional error after pruning ReLU networks — anonymous reproduction repository
 
-This repository accompanies an anonymous conference submission on functional change after pruning feedforward ReLU networks. It contains the exact MLP training/pruning code used for the controlled experiments, machine-readable configurations, deterministic seed handling, result aggregation, paired confidence intervals, and figure scripts.
+This repository accompanies an anonymous conference submission on functional change after pruning feedforward ReLU networks. It contains the exact MLP and CNN training/pruning code used for the controlled experiments, machine-readable configurations, deterministic seed handling, result aggregation, paired confidence intervals, and figure scripts.
 
 The primary experiment holds the **task-Taylor saliency rule fixed** and changes only the fine-tuning objective:
 

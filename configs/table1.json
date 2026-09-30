@@ -1,0 +1,49 @@
+{
+  "description": "Controlled Table 1 reproduction: task-Taylor saliency held fixed; only fine-tuning objective changes.",
+  "datasets": ["mnist", "fmnist"],
+  "seeds": [0, 1, 2, 3, 4],
+  "architecture": {
+    "hidden": [512, 512],
+    "activation": "relu"
+  },
+  "dense_training": {
+    "epochs": 20,
+    "optimizer": "adam",
+    "learning_rate": 0.001,
+    "batch_size": 256,
+    "weight_decay": 0.0,
+    "scheduler": null
+  },
+  "pruning": {
+    "type": "global_unstructured",
+    "parameters": "weights_only",
+    "biases_pruned": false,
+    "saliency": "taylor",
+    "saliency_batches": 8,
+    "progressive_target_sparsities": [0.5, 0.7, 0.8, 0.9]
+  },
+  "fine_tuning": {
+    "epochs_per_stage": 3,
+    "optimizer": "adam",
+    "learning_rate": 0.001,
+    "optimizer_reinitialized_each_pruning_stage": true,
+    "masked_weights_can_regrow": false,
+    "matching_coefficient": 0.01,
+    "objectives": ["fixed", "output"]
+  },
+  "calibration": {
+    "max_examples": 4096,
+    "selection": "deterministic_per_seed",
+    "selection_seed_offset": 100000,
+    "saliency_uses_training_data_only": true
+  },
+  "evaluation": {
+    "functional_metrics_on_held_out_test_only": true,
+    "primary_metrics": ["accuracy", "D_fix", "D_gate", "D_func", "kappa"],
+    "secondary_metrics": ["centered_logit_l2", "kl_dense_sparse", "js_dense_sparse", "teacher_agreement"]
+  },
+  "image_normalization": {
+    "mnist": {"mean": [0.1307], "std": [0.3081]},
+    "fmnist": {"mean": [0.2860], "std": [0.3530]}
+  }
+}

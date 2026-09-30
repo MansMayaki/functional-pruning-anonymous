@@ -1,0 +1,9 @@
+dataset,delta_definition,metric,mean,ci95_low,ci95_high
+mnist,fixed-output,accuracy_pp,0.060,-0.024,0.144
+mnist,fixed-output,D_fix,-3.98,-4.94,-3.02
+mnist,fixed-output,D_func,8.08,6.87,9.29
+mnist,fixed-output,kappa,0.811,0.781,0.842
+fmnist,fixed-output,accuracy_pp,-0.140,-0.371,0.091
+fmnist,fixed-output,D_fix,-9.90,-10.66,-9.13
+fmnist,fixed-output,D_func,18.03,16.72,19.33
+fmnist,fixed-output,kappa,0.916,0.907,0.925

@@ -1,0 +1,5 @@
+dataset,finetune,accuracy_mean,accuracy_sd,D_fix_mean,D_fix_sd,D_func_mean,D_func_sd,kappa_mean,kappa_sd
+mnist,output,98.07,0.08,7.44,0.74,3.95,0.13,-0.840,0.028
+mnist,fixed,98.13,0.06,3.46,0.08,12.03,0.92,-0.029,0.010
+fmnist,output,88.95,0.36,14.62,0.60,4.97,0.08,-0.936,0.006
+fmnist,fixed,88.81,0.28,4.72,0.14,23.00,1.09,-0.020,0.006
